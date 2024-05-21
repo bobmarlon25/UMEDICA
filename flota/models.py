@@ -33,7 +33,7 @@ class  Registros(models.Model):
     remicion= models.IntegerField(null=False, blank=False)
     firma = models.ImageField(upload_to='media',blank=True)
     foto = models.ImageField(upload_to='media',blank=True)
-   
+    costo=models.DecimalField(max_digits=10,decimal_places=2,default=0)
     def get_last_name(self):
         return self.autor.last_name
 
