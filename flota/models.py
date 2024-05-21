@@ -14,8 +14,8 @@ class  Ambulancia(models.Model):
     placa=models.CharField(max_length=10)
     ven_soat=models.DateField(default=timezone.now)
     ven_tecno=models.DateField(default=timezone.now)
-    frontal = models.ImageField(upload_to='media/',blank=True)
-    lateral = models.ImageField(upload_to='media/',blank=True)
+    frontal = models.ImageField(upload_to='media',blank=True)
+    lateral = models.ImageField(upload_to='media',blank=True)
 
     def __str__(self):
         return self.movil

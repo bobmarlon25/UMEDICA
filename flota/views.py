@@ -13,7 +13,7 @@ from django.views.generic import View
 
 
 from datetime import datetime 
-
+from django.db.models import Sum
 
 from io import BytesIO # nos ayuda a convertir un html en pdf
 from django.template.loader import get_template
@@ -197,12 +197,23 @@ def Cargar_c(request,ambulancia_id):
 """  mostrar el hitorial de tanqueo"""
 def Tanqueo(request,ambulancia_id):
     listaregistro = Registros.objects.filter(movil_id=ambulancia_id)
+    # Sumar todos los costos de los registros de tanqueo de la ambulancia
+    total_cost = listaregistro.aggregate(Sum('costo'))['costo__sum']
+    
+    # Manejar el caso donde no hay registros (total_cost será None)
+    if total_cost is None:
+        total_cost = 0
+
+
+
+
     objambulancia = Ambulancia.objects.get(pk=ambulancia_id)
     fecha_actual = datetime.now().strftime('%Y-%m-%d')
     context = {
         'registros':listaregistro,
         'ambulancia':objambulancia,
         'fecha_actual':fecha_actual,
+        'total':total_cost,
 
     }
     return render(request,'flota/historial_tanqueo.html',context)
