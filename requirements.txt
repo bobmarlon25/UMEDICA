@@ -11,3 +11,4 @@ whitenoise
 python-decouple
 
 django-widget-tweaks
+xhtml2pdf
