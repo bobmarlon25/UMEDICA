@@ -1,0 +1,11 @@
+django==3.2
+pillow
+psycopg2-binary
+
+
+django-admin-tailwind
+
+gunicorn
+whitenoise
+
+python-decouple

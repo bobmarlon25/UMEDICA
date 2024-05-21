@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+<style>
+
+      /* Estilos específicos para pantallas pequeñas */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 200px; /* Ajusta el ancho del menú lateral */
+            }
+            .menu-toggle {
+                display: block; /* Muestra el botón de menú en pantallas pequeñas */
+            }
+            .navbar {
+                padding: 10px; /* Agrega espacio alrededor de la barra de navegación */
+            }
+            /* Agrega más estilos específicos para pantallas pequeñas si es necesario */
+        }
+      body {
+        background-image: url("https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/SL-072923-62010-97.jpg?v=1712620473027");
+        background-size: cover; /* Esto ajusta la imagen para cubrir todo el fondo */
+        background-repeat: no-repeat; /* Esto evita que la imagen se repita */
+      }
+    </style>
+  </head>
+<body class="bg-light">
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="background-image: url('https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/31035w04.jpg?v=1709855911065')" >
+                    <div class="card-body">
+                        <h5 class="card-title">Inicio de Sesión para Usuarios</h5>
+                        <!-- Aquí van los campos de usuario y contraseña -->
+                        <!-- Ejemplo: -->
+                        
+                        <form method="post">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="mb-3">
+                                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                                    {{ field }}
+                                </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        
+                        
+                        <script>
+                            document.getElementById('loginForm').addEventListener('submit', async function(event) {
+                                event.preventDefault();
+                                const formData = new FormData(this);
+                                const username = formData.get('username');
+                                const password = formData.get('password');
+
+                                try {
+                                    const response = await fetch('/login', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify({ username, password })
+                                    });
+                                    const data = await response.json();
+                                    if (response.ok) {
+                                        if (data.role === 'normal') {
+                                            localStorage.setItem('userRole', data.role);
+                                            window.location.href = data.redirectTo;
+                                        } else {
+                                            alert('Acceso denegado');
+                                        }
+                                    } else {
+                                        alert(data.error);
+                                    }
+                                } catch (error) {
+                                    console.error('Error:', error);
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

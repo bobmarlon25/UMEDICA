@@ -1,0 +1,729 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One|Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Umedica</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}"/>
+    <style>
+      body {
+        background-image: url("https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/SL-072923-62010-97.jpg?v=1712620473027");
+        background-size: cover; /* Esto ajusta la imagen para cubrir todo el fondo */
+        background-repeat: no-repeat; /* Esto evita que la imagen se repita */
+        font-family: 'Signika Negative', sans-serif;
+        
+      }
+      .login-row{
+        background-image: url('https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg?v=1712618457076'); /* Ruta de tu imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */}
+      .dropdown-menu{background-image: url('https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg?v=1712618457076'); /* Ruta de tu imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */}
+      
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Elemento "Iniciar sesión" -->
+      <div class="login-row bg-primary">
+        <div class="container">
+          <div class="row justify-content-end align-items-center h-100">
+            <div class="col-auto">
+              <a class="navbar-brand" href="index.html">
+                <img
+                  src="https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/usuario-unscreen.gif?v=1709857128718"
+                  alt="LOGO"
+                  height="50"
+                />
+              </a>
+            </div>
+            <div class="col-auto">
+              <a
+                class="nav-link text-black"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="font-size: 25px"
+              >
+                Iniciar sesión
+              </a>
+
+              <ul
+                class="dropdown-menu bg-primary"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a class="dropdown-item text-dark" href="account/login/"
+                    >Personal Umedicas</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-dark" href="/admin"
+                    >Administrador</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de navegación -->
+      <nav class="navbar bg-light text-dark fixed-top" data-bs-theme="light">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/descarga-removebg-preview.png?v=1708646830022"
+              alt="LOGO"
+              height="130"
+            />
+          </a>
+          <!-- Elementos de la barra de navegación -->
+          <div class="container">
+            <div class="container">
+              <ul class="nav d-flex justify-content-center">
+                <li class="nav-item me-3">
+                  <a
+                    class="nav-link active fs-5"
+                    aria-current="page"
+                    href="acercade.html"
+                    >Conócenos</a
+                  >
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link active fs-5" aria-current="page" href="/"
+                    >Servicios</a
+                  >
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link active fs-5" aria-current="page" href="/"
+                    >Beneficios</a
+                  >
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link active fs-5" aria-current="page" href="/"
+                    >Afiliados</a
+                  >
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link active fs-5" aria-current="page" href="/"
+                    >Blog</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active fs-5" aria-current="page" href="/"
+                    >Contacto</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Titúlo-->
+
+      <div>
+        <div
+          class="cover cover-small d-flex justify-content-end d-flex align-items-start flex-column p-5"
+        >
+          <h1>¡Cuidamos de los que más quieres!</h1>
+          <p>
+            Protege a los tuyos ante cualquier problema de salud. Atencion
+            medica 24 horas
+          </p>
+          <button class="btn btn-primary border border-light">
+            Quiero afiliarme
+          </button>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center my-4">
+        <!-- Contenedor centrado con margen vertical -->
+        <div class="btn-group">
+          <!-- Botón para personas -->
+          <a
+            href="#"
+            class="btn btn-primary btn-lg border border-primary custom-button btn-personas"
+            >Personas</a
+          >
+          <!-- Botón para empresas -->
+          <a
+            href="#"
+            class="btn btn-light btn-lg border border-secondary custom-button btn-empresa"
+            >Empresas</a
+          >
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center flex-wrap nowrap mb-4">
+        <!-- Botón con imagen 1 -->
+        <div class="btn-group me-5 position-relative">
+          <div class="position-absolute w-100 text-center">
+            
+            <h11 
+                
+                class="m-0">JÓVENES</h11>
+            
+          </div>
+          
+          <a
+            href="#"
+             
+            class=" btn-outline-primary btn-lg border border-primary custom-button button1"
+          >
+          </a>
+        </div>
+
+        <!-- Botón con imagen 2 -->
+        <div class="btn-group me-5 position-relative">
+          <div class="position-absolute w-100 text-center">
+            <h11 class="m-0">BEBÉ A BORDO</h11>
+          </div>
+          <a
+            href="#"
+            class=" btn-outline-primary btn-lg border border-primary custom-button button2"
+          >
+          </a>
+        </div>
+        <!-- Botón con imagen 3 -->
+        <div class="btn-group me-5 position-relative">
+          <div class="position-absolute w-100 text-center">
+            <h11 class="m-0">FAMILIA</h11>
+          </div>
+          <a
+            href="#"
+            class=" btn-outline-primary btn-lg border border-primary custom-button button3"
+          >
+          </a>
+        </div>
+        <!-- Botón con imagen 4 -->
+        <div class="btn-group me-5 position-relative">
+          <div class="position-absolute w-100 text-center">
+            <h11 class="m-0">ADULTOS MAYORES</h11>
+          </div>
+          <a
+            href="#"
+            class=" btn-outline-primary btn-lg border border-primary custom-button button4"
+          >
+          </a>
+        </div>
+        <div class="justify-content-center">
+          <div class="btn-group">
+            <a
+              href="#"
+              class="btn btn-outline-primary me-5 btn-lg border border-primary custom-button button5"
+              style="margin-right: 140px"
+              >EMPRESAS Y COMERCIOS</a
+            >
+          </div>
+          <!-- Botón con imagen 2 -->
+          <div class="btn-group">
+            <a
+              href="#"
+              class="btn btn-outline-primary me-1 btn-lg border border-primary custom-button button6"
+              style="margin-right: 140px"
+              >EMPRESAS Y COMERCIOS</a
+            >
+          </div>
+          
+        <!--<div class="btn-group">
+            <a
+              href="#"
+              class="btn btn-outline-primary btn-lg border border-primary custom-button button6"
+              style="margin-right: 140px"
+              >EMPRESAS Y COMERCIOS</a
+            >
+          </div>---------> 
+        </div>
+      </div>
+
+      <!-- pagos en linea------------------------------------------------->
+
+      <div id="payment-section" class="button-container">
+        <div class="button-with-image">
+          <img
+            src="https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/0_TbxwQ78vz0UaCRSz.jpg?v=1708967027037"
+            alt="Imagen"
+            class="button-image"
+          />
+          <button class="custom-button button7">
+            <h7> Pagos en línea </h7>
+            <h4>
+              Realizalos de forma segura desde la comodidad donde te encuentres
+            </h4>
+          </button>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------>
+      <div class="bg-primary p-2 text-dark ">
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-md-6">
+              <h12>¡Te mereces lo mejor!</h12>
+              <p>
+                
+              </p>
+              <h9>Beneficios para nuestros afiliados</h9>
+            </div>
+            <div class="circle-list col-md-6">
+              <ul>
+                <li>Traslado asistencial básico y medicalizado.</li>
+                <li>Traslado de paceintes de accidente de tránsito</li>
+                <li>Traslado de particulares.</li>
+                <li>Cubrimiento en eventos deportivos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="col text-center">
+      <p></p>
+      <p></p>
+      <h7> Regístrate en línea según lo que necesites</h7>
+    </div>
+
+    <div class="p-2 text-dark">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="card fade-in rounded">
+              <div
+                title="TRASLADO ASISTENCIAL BASICO Y MEDICALIZADO"
+                class="cover1  rounded"
+              ></div>
+
+              <div class="card-body p-2 text-dark ">
+                <h5 class="card-title">
+                  TRASLADO ASISTENCIAL BASICO Y MEDICALIZADO
+                </h5>
+                <p class="card-text">
+                  En nuestro servicio de traslado asistencial, ofrecemos dos
+                  niveles de atención diseñados para satisfacer las necesidades
+                  específicas de nuestros pacientes: el traslado asistencial
+                  básico y el traslado asistencial medicalizado.
+                </p>
+                
+                <a href="#" class="btn btn-primary">Solicitar</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="card fade-in rounded">
+              <div
+                title="TRASLADO DE PACIENTES DE ACCIDENTE DE TRANSITO"
+                class="cover2  rounded"
+              ></div>
+
+              <div class="card-body p-2 text-dark">
+                <h5 class="card-title">
+                  TRASLADO DE PACIENTES DE ACCIDENTE DE TRANSITO
+                </h5>
+                <p class="card-text">
+                  En momentos de emergencia, cada segundo cuenta. En Umedicas,
+                  entendemos la importancia de una respuesta rápida y efectiva
+                  en casos de accidentes de tránsito.
+                </p>
+                
+               <!-- <ul>
+                  <li class="respuesta-rapida">Respuesta Rápida</li>
+                  <li class="atencion-especializada">Atención Especializada</li>
+                  <li class="transporte-seguro">Transporte Seguro</li>
+                </ul>---->
+
+                <a href="#" class="btn btn-primary">Solicitar</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="card fade-in rounded">
+              <div
+                title="ambulanciass riesgo"
+                class="cover3 rounded"
+              ></div>
+              <!--coer-small lado de cover3-->
+              <div class="card-body p-2 text-dark">
+                <h5 class="card-title">TRASLADO DE PARTICULARES</h5>
+                <p class="card-text">
+                  En Umedicas, ofrecemos un servicio de traslado especializado
+                  para particulares que valoran la comodidad, la seguridad y la
+                  puntualidad en sus desplazamientos.
+                </p>
+                
+              <!--  <ul>
+                  <li class="respuesta-rapida">Comodidad</li>
+                  <li class="atencion-especializada">Seguridad</li>
+                  <li class="transporte-seguro">Puntualidad</li>
+                </ul>--->
+                <a href="AMBULANCIA1.html" class="btn btn-primary">Solicitar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CORREO-------------------------------------------------------------------------------->
+      <!-- <section>
+        <div class="container mt-5 mb-5">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-lg-5">
+              <div
+                title="doctor medicina"
+                class="cober cover-small"
+                style="
+                  background-image: url(https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/_16ecf3ed-c963-4140-94a2-f9d0b1af15f1.jpeg?v=1708643116742);
+                "
+              ></div>
+
+              <div class="col-12 col-sm-6">
+                <h3 class="display-4">
+                  Unidad móvil de emergencias médicas vitales S.A.S.
+                </h3>
+                <p class="lead">Ordena tus ambulancias</p>
+                <a href="#mapa" class="btn btn-primary btn-lg">Ir al mapa</a>
+              </div>
+            </div>
+            <form action="">
+              <div class="d-flex">
+                <div class="flex-fill mr-2">
+                  <label for="email">correo electrónico</label>
+                  <input type="email" id="email" class="forma-control" />
+                </div>
+                <button type="submit" class="btn btn-outline-primary">
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+--------------------------------------------------------------------------------------------------->
+   <!--   <section>
+        TIRA DE PRODUCTOS
+        <div class="col text-center"><h4>Blog</h4></div>
+        <div class="container mt-5 mb-5" id="stripe">
+          <div class="product-stripe">
+            <div class="stripe-container">
+              <div class="card">
+                <div
+                  title="Monitoreo de las Ambulancias"
+                  class="cover cover-small"
+                  style="
+                    background-image: url(https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/_1bc25f14-0f21-4643-98aa-a7f3e8c8cb73.jpeg?v=1708644070394);
+                  "
+                ></div>
+                <div class="card-body">
+                  <h5 class="card-title">Monitoreo de las Ambulancias</h5>
+                  <span class="badge text-bg-info">AMB1</span>
+                </div>
+              </div>
+              <div class="card">
+                <div
+                  title="gps"
+                  class="cover cover-small"
+                  style="
+                    background-image: url(https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/adult-4402808_640.jpg?v=1708053714031);
+                  "
+                ></div>
+                <div class="card-body">
+                  <h5 class="card-title">Revisión de las Ambulancias</h5>
+                  <span class="badge text-bg-info">AMB2</span>
+                </div>
+              </div>
+              <div class="card">
+                <div
+                  title="gps"
+                  class="cover cover-small"
+                  style="
+                    background-image: url(https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/6ea31336-9863-4000-9de5-571a4ddd56eb.image.png?v=1708644400080);
+                  "
+                ></div>
+                <div class="card-body">
+                  <h5 class="card-title">Vehiculos de calidad</h5>
+                  <span class="badge text-bg-info">AMB3</span>
+                </div>
+              </div>
+              <div class="card">
+                <div
+                  title="gps"
+                  class="cover cover-small"
+                  style="
+                    background-image: url(https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/_2725e629-980a-45f3-985c-b8f15150700d.jpeg?v=1708644282244);
+                  "
+                ></div>
+                <div class="card-body">
+                  <h5 class="card-title">Dispositivos medicos de transporte</h5>
+                  <span class="badge text-bg-info">AMB4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>---------->
+      <selection>
+        <div class="container mt-5 mb-5 text-center" id="mapa">
+          <h4>Oficina:</h4>
+          <p>Ubicaión de la empresa</p>
+          <div class="responsive-iframe">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.8269349550937!2d-72.49326972499374!3d7.913140092110145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66451b40f58d01%3A0x97150512027481bd!2sUMEDICAS%20SAS!5e0!3m2!1ses-419!2sco!4v1708642888417!5m2!1ses-419!2sco"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </selection>
+    </div>
+    <script>
+      window.addEventListener("scroll", function () {
+        var loginRow = document.querySelector(".login-row");
+        var navbar = document.querySelector(".navbar");
+        var scrollPosition = window.scrollY;
+
+        if (scrollPosition > 0) {
+          loginRow.style.top =
+            "-50px"; /* Mueve la fila de inicio de sesión fuera de la vista */
+          navbar.classList.add(
+            "fixed-navbar"
+          ); /* Agrega la clase para fijar la barra de navegación en la parte superior */
+        } else {
+          loginRow.style.top =
+            "0"; /* Vuelve a mostrar la fila de inicio de sesión */
+          navbar.classList.remove(
+            "fixed-navbar"
+          ); /* Elimina la clase de barra de navegación fija */
+        }
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+    <script>
+    // Get the buttons
+    var personasButton = document.querySelector(".btn-personas");
+    var empresaButton = document.querySelector(".btn-empresa");
+
+    // Get the button containers
+    var personasButtons = document.querySelectorAll(".btn-group.me-5.position-relative"); // Seleccionar los contenedores de los botones de personas
+    var empresaButtons = document.querySelectorAll(".button5, .button6");
+
+    // Add event listeners
+    personasButton.addEventListener("click", function () {
+        // Show personas buttons
+        personasButtons.forEach(function (container) {
+            container.style.display = "inline-block"; // Mostrar el contenedor del botón de personas
+        });
+
+        // Hide empresa buttons
+        empresaButtons.forEach(function (button) {
+            button.style.display = "none";
+        });
+    });
+
+    empresaButton.addEventListener("click", function () {
+        // Show empresa buttons
+        empresaButtons.forEach(function (button) {
+            button.style.display = "inline-block";
+        });
+
+        // Hide personas buttons
+        personasButtons.forEach(function (container) {
+            container.style.display = "none"; // Ocultar el contenedor del botón de personas
+        });
+    });
+</script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          $(".fade-in").each(function () {
+            var position = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > position - windowHeight + 200) {
+              // Cambia 200 por el valor que prefieras para ajustar cuándo se activa la animación
+              $(this).addClass("active");
+            } else {
+              $(this).removeClass("active"); // Eliminar la clase si el elemento está fuera de la vista
+            }
+          });
+        });
+      });
+    </script>
+    <footer class="footer bg-primary text-light py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Columna 1: Imagen y Redes Sociales -->
+          <div class="col-md-3">
+            <!-- Agrega la imagen -->
+            <a class="navbar-brand" href="index.html">
+              <img
+                src="https://cdn.glitch.global/dd67a867-ee25-4bee-981a-7488c739ae8d/descarga-removebg-preview.png?v=1708646830022"
+                alt="LOGO"
+                height="130"
+              />
+            </a>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://web.facebook.com/ambulanciasumedicas/?locale=es_LA&_rdc=1&_rdr"
+                  ><i class="fab fa-facebook-f"></i>Facebook</a
+                >
+              </li>
+              <li>
+                <a href="https://twitter.com/Umedicas123"
+                  ><i class="fab fa-twitter"></i> Twitter</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+              </li>
+              <!-- Agrega más redes sociales si es necesario -->
+            </ul>
+          </div>
+
+          <!-- Columna 2: Información de la Empresa -->
+          <div class="col-md-3">
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://web.facebook.com/ambulanciasumedicas/?locale=es_LA&_rdc=1&_rdr"
+                  ><i class="fab fa-facebook-f"></i>Datos de la Empresa</a
+                >
+              </li>
+              <p></p>
+              <li>
+                <a href="https://twitter.com/Umedicas123"
+                  ><i class="fab fa-twitter"></i> Beneficios</a
+                >
+              </li>
+              <p></p>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i> Dirección</a>
+              </li>
+              <p></p>
+              <!-- Agrega más redes sociales si es necesario -->
+
+              <li>
+                <a
+                  href="https://web.facebook.com/ambulanciasumedicas/?locale=es_LA&_rdc=1&_rdr"
+                  ><i class="fab fa-facebook-f"></i>Directorio médico</a
+                >
+              </li>
+              <p></p>
+              <li>
+                <a href="https://twitter.com/Umedicas123"
+                  ><i class="fab fa-twitter"></i> Trabaja con nosotros</a
+                >
+              </li>
+
+              <!-- Agrega más redes sociales si es necesario -->
+            </ul>
+          </div>
+
+          <!-- Columna 3: Información Adicional -->
+
+          <div class="col-md-3">
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://web.facebook.com/ambulanciasumedicas/?locale=es_LA&_rdc=1&_rdr"
+                  ><i class="fab fa-facebook-f"></i>Afiliar adulto mayor</a
+                >
+              </li>
+              <p></p>
+              <li>
+                <a href="https://twitter.com/Umedicas123"
+                  ><i class="fab fa-twitter"></i> Afiliar bebé</a
+                >
+              </li>
+              <p></p>
+              <li>
+                <a href="#"
+                  ><i class="fab fa-instagram"></i> Afiliar familias</a
+                >
+              </li>
+              <p></p>
+              <!-- Agrega más redes sociales si es necesario -->
+
+              <li>
+                <a
+                  href="https://web.facebook.com/ambulanciasumedicas/?locale=es_LA&_rdc=1&_rdr"
+                  ><i class="fab fa-facebook-f"></i>Afiliar jóvenes</a
+                >
+              </li>
+              <p></p>
+              <li>
+                <a href="https://twitter.com/Umedicas123"
+                  ><i class="fab fa-twitter"></i> Afiliar empresas y
+                  comercios</a
+                >
+              </li>
+              <p></p>
+              <li>
+                <a href="https://twitter.com/Umedicas123"
+                  ><i class="fab fa-twitter"></i> Ambulancias para eventos</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna 4: Enlaces Útiles -->
+          <div class="col-md-3">
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://web.facebook.com/ambulanciasumedicas/?locale=es_LA&_rdc=1&_rdr"
+                  ><i class="fab fa-facebook-f"></i> Blog</a
+                >
+              </li>
+              <p></p>
+              <li>
+                <a href="https://twitter.com/Umedicas123"
+                  ><i class="fab fa-twitter"></i> Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Texto centrado debajo de las 4 columnas -->
+        <div class="row">
+          <div class="col text-center">
+            <p></p>
+            <p>
+              Asistencia Médica Inmediata – Servicio de Ambulancias Prepagada
+              S.A. Todos los derechos reservados
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
