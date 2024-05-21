@@ -4,8 +4,10 @@ psycopg2-binary
 
 
 django-admin-tailwind
-
+django-cors-headers
 gunicorn
 whitenoise
 
 python-decouple
+
+django-widget-tweaks
