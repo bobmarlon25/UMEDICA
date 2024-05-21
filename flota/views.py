@@ -199,14 +199,15 @@ def Tanqueo(request,ambulancia_id):
     listaregistro = Registros.objects.filter(movil_id=ambulancia_id)
     # Sumar todos los costos de los registros de tanqueo de la ambulancia
     total_cost = listaregistro.aggregate(Sum('costo'))['costo__sum']
-    
+    print(total_cost)
     # Manejar el caso donde no hay registros (total_cost será None)
     if total_cost is None:
         total_cost = 0
 
 
 
-
+    for registro in listaregistro:
+        print(registro.costo)
     objambulancia = Ambulancia.objects.get(pk=ambulancia_id)
     fecha_actual = datetime.now().strftime('%Y-%m-%d')
     context = {
