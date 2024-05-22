@@ -182,6 +182,8 @@ def Cargar_c(request,ambulancia_id):
             nuevoregistro.foto=dataregistro["foto"]
             nuevoregistro.firma=dataregistro["firma"]
             nuevoregistro.fecha_registro=dataregistro["fecha"]
+            nuevoregistro.costo=dataregistro["costo"]
+
             nuevoregistro.save()
             mensaje="si pudimos"
     context = {
