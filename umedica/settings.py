@@ -147,11 +147,11 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
 import os 
-MEDIA_ROOT=os.path.join(BASE_DIR,'media','media')
+MEDIA_ROOT=os.path.join(BASE_DIR,'UMEDICA/media')
 MEDIA_URL='/media/'
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR,'UMEDICA/static')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
