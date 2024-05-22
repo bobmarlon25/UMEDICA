@@ -147,7 +147,7 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
 import os 
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_ROOT=os.path.join(BASE_DIR,'media','media')
 MEDIA_URL='/media/'
 
 
