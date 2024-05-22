@@ -17,6 +17,7 @@ class SubirDumentoImagenForm(forms.Form):
     foto=forms.FileField(label="foto del kilometraje" ,required=True, help_text='Por favor, carga una imagen', 
                              validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])])
  
+    
  
 
 
