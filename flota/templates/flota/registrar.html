@@ -481,14 +481,25 @@
       <li class="last-blogs__item"  >
         <article >
           <a href="/flota/informacion/{{ambulancia.id}}" class="most-read-blog__img-cont" style="margin-left: 25px; margin-top: 220px;">
-    <img
+    
+            <img
         class="most-read-blog__img ambulancia-info"
         src="{{ambulancia.lateral.url}}"
         alt="most read blog img"
         width="250"
         height="250"
-    />
-</a>
+             />
+            {% if not condicion %}
+            <img
+            class="most-read-blog__img ambulancia-info"
+            src="{{ambulancia.lateral.url}}"
+            alt="most read blog img"
+            width="250"
+            height="250"
+                 />
+            {% endif %}
+
+</a>  
 
           <div class="most-read-blog__content">
             <a href="/flota/informacion/{{ambulancia.id}}">
